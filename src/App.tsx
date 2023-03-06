@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Typography } from '@mui/material';
+import { Box, Container } from '@mui/system';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import changeColor from './components/localStorage';
+import FinalScreen from './pages/FinalScreen';
+import Questions from './pages/Questions';
+import Settings from './pages/Settings';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <input type="color" id="colorID" onChange={changeColor}></input>
+    <input type="color" id="colorID2" onChange={changeColor}></input>
+      <BrowserRouter>
+      <Container maxWidth="sm">
+        <Box textAlign="center" mt={5}>
+        <Typography variant="h2" fontWeight="bold" paddingBottom={"4rem"}>Quiz App </Typography>
+        <Routes>
+          <Route path="/" element= { <Settings />}/>  
+          <Route path="/questions" element= {<Questions />}/>
+          <Route path="/score" element= {<FinalScreen />}/>
+        </Routes>
+        </Box>
+      </Container>
+      </BrowserRouter>
     </div>
   );
 }

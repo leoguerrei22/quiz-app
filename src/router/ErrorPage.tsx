@@ -1,10 +1,7 @@
-import React from 'react'
-import { useLocation } from 'react-router';
+
 import { Link } from 'react-router-dom';
 
 function ErrorPage() {
-
-  const location = useLocation();
 
   return (
     <div>

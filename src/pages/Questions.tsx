@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import { handleScoreChange } from "../redux/actions";
 
@@ -87,6 +88,11 @@ const Questions = () => {
       ))}
       <Box mt={5}>
         Score: {score} / {response.results.length}
+      </Box>
+      <Box mt={5}>
+
+      <p><Link className="item" to="/">Back to Home</Link> /  <Link className="item" to="ErrorPage">Do not click!</Link></p>
+
       </Box>
     </Box>
   );
